@@ -10,12 +10,16 @@ body {
     font-weight: bold;
 }
 .container {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     color: #020935;
 }
 .row {
+    display: flex;
+    justify-content: space-between; /* Распределяем элементы равномерно по горизонтали */
+    align-items: center; /* Выравниваем по вертикали */
 }
+
 .col-12 {
 }
 .col-8 {
@@ -79,4 +83,68 @@ body {
 #demo img{
     margin-top: 20px;
     width: 40%;
+}
+
+.regis {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #020935;
+    height: 100%;
+/*
+    background: url(../image/to_river.jpeg) no-repeat top center;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto; /* Добавляем этот стиль для центрирования блока по горизонтали 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+}
+
+.col-6 {
+    width: 48%; /* Ширина колонки 48% с учетом 2% отступа между ними */
+}
+
+
+
+.photo_a {
+    visibility: hidden; /* Начальное состояние: блок скрыт */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: flex-end; /* Выравниваем по горизонтали слева */
+    align-items: center; /* Выравниваем по вертикали по центру */
+    height: 100%; /* 100% высоты родительского контейнера */
+    margin-left: auto; /* Отступ между первой и второй картинкой */
+}
+
+.photo_i {
+    visibility: hidden; /* Начальное состояние: блок скрыт */
+    display: flex; /* Используем flexbox для выравнивания */
+    justify-content: flex-start; /* Выравниваем по горизонтали справа */
+    align-items: center; /* Выравниваем по вертикали по центру */
+    height: 100%; /* 100% высоты родительского контейнера */
+    margin-left: auto; /* Отступ между второй и первой картинкой */
+}
+
+.photo_a img {
+    width: 300px; /* 100% ширины родительского контейнера */
+    height: 397px; /* Поддерживаем пропорциональное изменение высоты */
+    max-width: 100%; /* Ограничение ширины до 100% */
+    max-height: 100%; /* Ограничение высоты до 100% */
+    border-radius: 10px; /* Добавляем скругление углов */
+    transform: scale(0.8); /* Уменьшаем размер изображения до 80% */
+    filter: blur(0px); /* Добавляем размытие краев */
+    vertical-align: top center;
+}
+
+.photo_i img {
+    width: 300px; /* 100% ширины родительского контейнера */
+    height: 397px; /* Поддерживаем пропорциональное изменение высоты */
+    max-width: 100%; /* Ограничение ширины до 100% */
+    max-height: 100%; /* Ограничение высоты до 100% */
+    border-radius: 10px; /* Добавляем скругление углов */
+    transform: scale(0.8); /* Уменьшаем размер изображения до 80% */
+    filter: blur(0px); /* Добавляем размытие краев */
+    vertical-align: top center;
 }
