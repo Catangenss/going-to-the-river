@@ -88,7 +88,8 @@ body {
     background-color: #45a049; /* Изменение цвета фона при наведении */
 }
 
-#postButton {
+
+#postButton, .btn {
     background-color: #90f9cf; /* Цвет фона кнопки */
     border: none; /* Убираем границу */
     color: #020935; /* Цвет текста */
@@ -102,9 +103,10 @@ body {
     border-radius: 10px; /* Закругление углов кнопки */
 }
 
-#postButton:hover {
+#postButton:hover, .btn:hover {
     background-color: #45a049; /* Изменение цвета фона при наведении */
 }
+
 
 
 #demo img{
@@ -135,6 +137,16 @@ textarea {
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
+}
+
+input[type="file"]{
+    margin-top: 15px; /* Добавим немного отступа сверху, чтобы кнопка не прилипала к последнему полю ввода */
+    padding: 10px 20px; /* Внутренний отступ кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    background-color: #45a049; /* Цвет фона кнопки */
+    color: #fff; /* Цвет текста кнопки */
+    cursor: pointer; /* Курсор при наведении на кнопку */
 }
 
 
