@@ -42,7 +42,7 @@
             <h1>Список постов!</h1>
         </div>
         <div class="col-12 regis">
-            <ol>
+            <orl>
             <?php
                 $link = mysqli_connect('127.0.0.1', 'root', 'iddqd', 'PT');
 
