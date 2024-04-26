@@ -12,7 +12,10 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-12 regis">
+        <?php
+        if (!isset($_COOKIE['User'])) {
+        ?>
+        <div class="col-12 message">
             <h1>Авторизуйтесь!</h1>
         </div>
         <div class="col-12 regis">
@@ -32,39 +35,60 @@
                 <img src="image/security_open.jpg" alt="sec">
             </div>
         </div>
-    </div>
+        <?php
+        } else {
+        ?>
+        <div class="col-12 message">
+            <h1>Список постов!</h1>
+        </div>
+        <div class="col-12 regis">
+            <ol>
+            <?php
+                $link = mysqli_connect('127.0.0.1', 'root', 'iddqd', 'PT');
+
+                $sql = "SELECT * FROM posts";
+                $res = mysqli_query($link, $sql);
+
+                if (mysqli_num_rows($res) > 0) {
+                    $counter = 1;
+                    while ($post = mysqli_fetch_array($res)) {
+                        echo "<li>"; // Открываем элемент списка для каждого поста
+                        echo "<a href='/posts.php?id=" . $post["id"] . "'>" . $post['title'] . "</a>";
+                        echo "</li>"; // Закрываем элемент списка
+                        $counter++; // Увеличиваем счетчик
+                    }
+                } else {
+                    echo "<li>Записей пока нет</li>"; // Если записей нет, выводим сообщение
+                }
+            }
+            ?>
+            </ol> <!-- Закрываем нумерованный список -->
+        </div>
+    </div>    
 </div>
-</body>
-</html>
 
 <script>
-    // Получаем ссылки и блоки с картинками
     var link1 = document.querySelector('a[href="/registration.php"]');
     var link2 = document.querySelector('a[href="/login.php"]');
     var photo1 = document.querySelector('.photo_a');
     var photo2 = document.querySelector('.photo_i');
 
-    // Добавляем обработчик события наведения курсора мыши на первую ссылку
     link1.addEventListener('mouseover', function() {
-        // Показываем блок с первой картинкой
         photo1.style.visibility = 'visible';
     });
 
-    // Добавляем обработчик события ухода курсора мыши с первой ссылки
     link1.addEventListener('mouseout', function() {
-        // Скрываем блок с первой картинкой
         photo1.style.visibility = 'hidden';
     });
 
-    // Добавляем обработчик события наведения курсора мыши на вторую ссылку
     link2.addEventListener('mouseover', function() {
-        // Показываем блок со второй картинкой
         photo2.style.visibility = 'visible';
     });
 
-    // Добавляем обработчик события ухода курсора мыши с второй ссылки
     link2.addEventListener('mouseout', function() {
-        // Скрываем блок со второй картинкой
         photo2.style.visibility = 'hidden';
     });
 </script>
+
+</body>
+</html>

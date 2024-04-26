@@ -12,12 +12,11 @@
 <body>
     <div class="container nav_bar">
         <div class="row">
-            <div class="row">
-                <div class="col-3 nav_logo"></div>
-                <div class="col-10">
-                    <div class="nav_text">Literaly me</div>
-                </div>
+            <div class="col-3 nav_logo"></div>
+            <div class="col-6">
+                <div class="nav_text">Literaly me</div>
             </div>
+            <div class="col-1"></div>
         </div>
     </div>
     <div class="container">
@@ -28,7 +27,7 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h3>Я, в своем познании настолько преисполнился, что как будто бы уже сто триллионов миллиардов лет, проживаю на триллионах и триллионах таких же планет. Планет, как эта Земля. Мне этот мир уже во многом понятен, и ищу я здесь только одного - покоя, умиротворения, и вот этой гармонии, от слияния с бесконечно-вечным, от созерцания этого великого фрактального подобия, и от вот этого замечательного всеединства существа, бесконечно-вечного, куда ни посмотри: хоть вглубь - в бесконечно малое, хоть ввысь - в бесконечно большое.</h3>
+                <h3>Я в своем познании настолько преисполнился, что как будто бы уже сто триллионов миллиардов лет, проживаю на триллионах и триллионах таких же планет. Планет, как эта Земля. Мне этот мир уже во многом понятен, и ищу я здесь только одного - покоя, умиротворения, и вот этой гармонии, от слияния с бесконечно-вечным, от созерцания этого великого фрактального подобия, и от вот этого замечательного всеединства существа, бесконечно-вечного, куда ни посмотри: хоть вглубь - в бесконечно малое, хоть ввысь - в бесконечно большое.</h3>
             </div>
         </div>
     </div>
@@ -66,6 +65,40 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row">
+            <div class = "col-12">
+                <h1 class="Hello">
+                    Привет, <?php echo $_COOKIE['User']; ?>
+                </h1>
+            </div>
+            <div class="col-12">
+                <form method="POST" action="profile.php">
+                    <input type="text" class="form" type="text" name="title" placeholder="Заголовок вашего поста">
+                    <textarea name="text" cols="30" rows="10" placeholder="Введите текст поста..."></textarea>
+                    <div class="col-12 btn__container">
+                        <button id="postButton" type="submit" class="btn" name="submit">Сохранить пост</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="../js/script.js"></script>
 </body>
 </html>
+
+<?php
+require_once('db.php');
+$link = mysqli_connect('127.0.0.1', 'root', 'iddqd', 'PT');
+
+if (isset($_POST['submit'])) {
+
+    $title = $_POST['title'];
+    $main_text = $_POST['text'];
+
+    if (!$title || !$main_text) die ("Заполните все поля");
+
+    $sql = "INSERT INTO posts (title, main_text) VALUES ('$title', '$main_text')";
+
+    if (!mysqli_query($link, $sql)) die ("Не удалось добавить пост");
+}
