@@ -14,6 +14,7 @@ body {
     margin-bottom: 20px;
     color: #020935;
 }
+
 .row {
     display: flex;
     justify-content: space-between; /* Распределяем элементы равномерно по горизонтали */
@@ -29,18 +30,13 @@ body {
     text-align: center;
 }
 
-.col-8 {
-}
-.col-4 {
-}
 .col-3.nav_logo {
     background: url(../image/images.png) no-repeat center center;
     background-size: 100%;
     width: 80px;
     height: 80px;
 }
-.col-9 {
-}
+
 .nav_text {
     display: flex;
     align-items: center;
@@ -60,6 +56,25 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.teams {
+    display: flex;
+}
+
+.koza, .smelik {
+    flex: 0 0 auto; /* Чтобы каждый элемент занимал половину ширины .teams */
+    display: flex; /* Позволяет изображению занимать всю высоту .koza и .smelik */
+    justify-content: center; /* Центрируем изображение по горизонтали */
+    align-items: center; /* Центрируем изображение по вертикали */
+    margin-left: 10%;
+}
+
+
+.koza img, .smelik img {
+    max-height: 70px; /* Ограничение высоты изображения */
+    width: auto; /* Автоматический расчет ширины для сохранения пропорций */
+    max-width: 100%; /* Изображение не будет превышать ширину .koza и .smelik */
 }
 
 
@@ -107,6 +122,10 @@ body {
     background-color: #45a049; /* Изменение цвета фона при наведении */
 }
 
+form textarea {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 #demo img{
@@ -123,8 +142,9 @@ body {
 }
 
 .col-6 {
-    width: 48%; /* Ширина колонки 48% с учетом 2% отступа между ними */
+    width: 48%;
 }
+
 
 input[type="text"],
 textarea {
@@ -132,7 +152,7 @@ textarea {
     margin: 0 auto; /* Установите автоматичесные отступы слева и справа, чтобы выровнять по центру горизонтально */
     padding: 10px;
     width: 80%;
-    margin-bottom: 20px;
+    padding: 0 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -190,7 +210,6 @@ input[type="file"]{
     filter: blur(0px); /* Добавляем размытие краев */
     vertical-align: top center;
 }
-
 
 /* Общие стили для строки ввода */
 .form__reg {

@@ -38,22 +38,27 @@
             </div>
             <div class="col-5">
                 <div class="row"><h3>Кузьмин К.А.</h3></div>
-                <div class="row"><p>Как же хочется вкатиться в пентест. ©<p></div>
-                <div class="row"><h3>Мои ачивки<h3></div>
+                <div class="row"><p>Как же хочется вкатиться в пентест. ©</p></div>
+                <div class="row"><h4>Мои ачивки<h4></div>
                 <ul>
                     <li>1 этап стажировки в Deteact 2023</li>
                     <li>Топ 400 на Tinkof CTF 2023</li>
                     <li>Топ 70 на Codeby Cybercolisium 2 (2023)</li>
                     <li>312 место на Tinkof CTF 2024</li>
+                    <li>64 место на Codeby Cybercolisium 3 (2024)</li>
                 </ul>
-                <div class="row"><h3>Мои любимые категори на CTF</h3></div>
-                    <ul>
-                        <li>1. Форензика</li>
-                        <li>2. Крипто</li>
-                        <li>3. PWN</li>
-                        <li>4. Надеюсь полюбить web после этого курса</li>
-                    </ul>
-                <div class="row"><h3>Да не умер он в конце стажировки.</h3></div>
+                <div class="teams">
+                    <div class="smelik"><img src="../image/Smelik.png"></div>
+                    <div class="koza"><img src="../image/koza.png"></div>
+                </div>
+                <div class="row"><h4>Мои любимые категори на CTF</h4></div>
+                <ul>
+                    <li>1. Форензика</li>
+                    <li>2. Крипто</li>
+                    <li>3. PWN</li>
+                    <li>4. Надеюсь полюбить web после этого курса</li>
+                </ul>
+                <div><h4>Да не умер он в конце стажировки.</h4></div>
             </div>
         </div>
     </div>
